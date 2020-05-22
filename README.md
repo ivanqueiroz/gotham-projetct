@@ -1,2 +1,2 @@
-# Gotham Projetct
+# Gotham Project
 Projectx
