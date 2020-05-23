@@ -2,6 +2,7 @@ package br.com.vivo.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,10 +13,8 @@ import javax.persistence.Table;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
 @Entity
 @Table(name = "cliente")
 @EqualsAndHashCode(of = "id")
@@ -25,10 +24,13 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@Column(nullable = false)
 	private String nome;
 
+	@Column(nullable = false, unique = true)
 	private String cpf;
 
+	@Column
 	private String estado;
 
 	@OneToMany(mappedBy = "cliente")
