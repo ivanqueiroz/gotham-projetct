@@ -17,12 +17,11 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "registro_cdr")
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@EqualsAndHashCode(of = "id")
 public class RegistroCdr {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@EqualsAndHashCode.Include
 	private Long id;
 
 	private String origem;

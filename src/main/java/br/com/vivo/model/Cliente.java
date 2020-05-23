@@ -18,12 +18,11 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "cliente")
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@EqualsAndHashCode(of = "id")
 public class Cliente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@EqualsAndHashCode.Include
 	private Long id;
 
 	private String nome;

@@ -20,12 +20,11 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "produto")
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@EqualsAndHashCode(of = "id")
 public class Produto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@EqualsAndHashCode.Include
 	private Long id;
 
 	private String numeroProduto;

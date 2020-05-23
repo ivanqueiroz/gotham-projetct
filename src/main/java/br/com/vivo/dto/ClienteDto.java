@@ -1,11 +1,9 @@
 package br.com.vivo.dto;
 
 import br.com.vivo.model.Produto;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class ClienteDto {
 
 	private String nome;
