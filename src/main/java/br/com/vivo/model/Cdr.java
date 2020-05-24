@@ -5,15 +5,16 @@ import java.time.LocalDateTime;
 
 import javax.persistence.*;
 
+import br.com.vivo.dto.CdrDto;
 import br.com.vivo.enums.Formato;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 @Getter
 @Entity
-@Table(name = "registro_cdr")
+@Table(name = "cdr")
 @EqualsAndHashCode(of = {"id"})
-public class RegistroCdr implements Serializable {
+public class Cdr implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,4 +36,11 @@ public class RegistroCdr implements Serializable {
     @Column(name = "duracao", nullable = false)
     private Integer duracao;
 
+    public Cdr(CdrDto dto) {
+        this.origem = dto.getOrigem();
+        this.destino = dto.getDestino();
+        this.formato = dto.getFormato();
+        this.dataRegistro = dto.getDataRegistro();
+        this.duracao = dto.getDuracao();
+    }
 }
