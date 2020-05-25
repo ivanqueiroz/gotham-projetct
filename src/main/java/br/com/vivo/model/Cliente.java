@@ -14,7 +14,6 @@ import javax.persistence.Table;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
@@ -24,9 +23,9 @@ public class Cliente implements Serializable {
 
 	private static final long serialVersionUID = 5325666395642081468L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
 	@Column(name = "nome", nullable = false)
 	private String nome;
