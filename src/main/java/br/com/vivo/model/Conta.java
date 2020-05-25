@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -19,32 +20,35 @@ import lombok.Getter;
 @Getter
 @Entity
 @Table(name = "conta")
-@EqualsAndHashCode(of = "id")
-public class Conta {
+@EqualsAndHashCode(of = { "id" })
+public class Conta implements Serializable {
+
+	private static final long serialVersionUID = 3197769213606321084L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(nullable = false)
+	@Column(name = "numero", nullable = false)
 	private Integer numero;
 
-	@Column(nullable = false)
+	@Column(name = "mes_referencia", nullable = false)
 	private LocalDate mesReferencia;
 
-	@Column(nullable = false)
+	@Column(name = "periodo_inicio", nullable = false)
 	private LocalDateTime periodoInicio;
 
-	@Column(nullable = false)
+	@Column(name = "periodo_fim", nullable = false)
 	private LocalDateTime periodoFim;
 
-	@Column(nullable = false)
+	@Column(name = "data_emissao", nullable = false)
 	private LocalDateTime dataEmissao;
 
-	@Column(nullable = false)
+	@Column(name = "valor", nullable = false)
 	private BigDecimal valor;
 
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "produto_id")
 	private Produto produto;
 
 }
