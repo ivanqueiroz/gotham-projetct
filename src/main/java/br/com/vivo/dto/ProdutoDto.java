@@ -18,5 +18,7 @@ public class ProdutoDto {
     private Integer qtdSms;
 
     private Integer qtdMinutos;
+    
+    private ClienteDto cliente;
 
 }
