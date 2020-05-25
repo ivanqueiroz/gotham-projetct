@@ -1,7 +1,8 @@
 package br.com.vivo.dto;
 
-import br.com.vivo.model.Produto;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class ClienteDto {
@@ -12,6 +13,6 @@ public class ClienteDto {
 
 	private String estado;
 
-	private Produto produto;
+	private List<ProdutoDto> produtos;
 
 }

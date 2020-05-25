@@ -18,7 +18,10 @@ public class ProdutoDto {
     private Integer qtdSms;
 
     private Integer qtdMinutos;
+<<<<<<< HEAD
     
     private ClienteDto cliente;
+=======
+>>>>>>> master
 
 }
